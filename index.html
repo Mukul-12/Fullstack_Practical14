@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body{
+            background-color: gray;
+        }
+        h1{
+            text-align: center;
+            color: white;
+        }
+        .counter {
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        button{
+            font-size: 40px;
+            color: black;
+            background-color: gold;  
+            border: 2px solid rgb(27, 22, 22);
+        }
+        button:hover{
+            background-color: salmon;
+        }
+        #minus{
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: xx-large;
+            margin-right: 40px;
+        }
+        #plus{
+            padding-left: 12px;
+            padding-right: 12px;
+            margin-left: 40px;
+        }
+        #out{
+            font-size: 40px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>COUNTER</h1>
+    <div class="counter">
+        <button id="minus" onclick="minus()">-</button>
+        <p id="out">0</p>
+        <button id="plus" onclick="plus()">+</button>
+    </div>
+    <script>
+        function minus(){
+            var x = document.getElementById("out");
+            if(x.innerHTML <= 0){
+                document.getElementById("minus").disabled=true;
+            }
+            else{
+                x.innerHTML -= 1;
+            }
+        }
+
+        function plus(){
+            var x = document.getElementById("out");
+            if(document.getElementById("minus").disabled){
+                document.getElementById("minus").disabled=false;
+                x.innerHTML = parseInt(x.innerHTML) + parseInt("1");
+            }
+            else{
+                x.innerHTML = parseInt(x.innerHTML) + parseInt("1");
+            }
+        }
+    </script>
+</body>
+</html>
